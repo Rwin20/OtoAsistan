@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Isletme AI - Kullanım Kılavuzu</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f3f4f6;
+        --card: #ffffff;
+        --text: #111827;
+        --muted: #6b7280;
+        --accent: #128c7e;
+        --line: #e5e7eb;
+        --code: #f8fafc;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+      }
+
+      main {
+        max-width: 1060px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+
+      header,
+      section {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      }
+
+      header {
+        padding: 28px;
+        margin-bottom: 18px;
+      }
+
+      section {
+        padding: 24px 28px;
+        margin-bottom: 16px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      p,
+      li {
+        margin-top: 0;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .box {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px;
+        background: #fbfdff;
+      }
+
+      .note {
+        border-left: 4px solid var(--accent);
+        padding: 12px 14px;
+        background: #ecfdf5;
+        border-radius: 10px;
+      }
+
+      .warn {
+        border-left: 4px solid #f59e0b;
+        padding: 12px 14px;
+        background: #fffbeb;
+        border-radius: 10px;
+      }
+
+      code,
+      pre {
+        font-family: Consolas, "Courier New", monospace;
+      }
+
+      pre {
+        margin: 10px 0 0;
+        padding: 14px;
+        overflow: auto;
+        border-radius: 12px;
+        background: var(--code);
+        border: 1px solid var(--line);
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      ul {
+        padding-left: 20px;
+        margin-bottom: 0;
+      }
+
+      ol {
+        padding-left: 20px;
+      }
+
+      .footer {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .pill {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: #ecfeff;
+        color: #155e75;
+        font-size: 13px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span class="pill">MUSTERİ paketi</span>
+        <h1>WhatsApp Isletme AI Kullanım Kılavuzu</h1>
+        <p class="muted">Bu paket temiz satış sürümüdür. Hiçbir kişisel API anahtarı, WhatsApp oturumu veya özel veri içermez.</p>
+      </header>
+
+      <section>
+        <h2>1. Bu paket ne yapar?</h2>
+        <p>
+          Bu yazılım, WhatsApp konuşmalarını yapay zeka ile cevaplayan, müşterileri operatöre devreden, şirket bilgisi ve belge tabanından
+          yanıt üreten yerel bir panel uygulamasıdır. Tüm veriler bilgisayarınızda saklanır.
+        </p>
+        <div class="note">
+          AI anahtarınızı dosya içine yazmanız gerekmez. Panel açıldıktan sonra kendi OpenAI, Gemini, Claude, DeepSeek veya OpenRouter
+          hesabınızı girersiniz.
+        </div>
+      </section>
+
+      <section>
+        <h2>2. Gerekli olanlar</h2>
+        <div class="grid">
+          <div class="box">
+            <h3>Windows</h3>
+            <p>Windows 10 veya Windows 11.</p>
+          </div>
+          <div class="box">
+            <h3>Node.js</h3>
+            <p>
+              Kurulum için gerekli. Resmi indirme sayfası:
+              <a href="https://nodejs.org/en/download" target="_blank" rel="noreferrer">nodejs.org/en/download</a>
+            </p>
+          </div>
+          <div class="box">
+            <h3>WhatsApp hesabı</h3>
+            <p>Panelden QR kod ile giriş yapılır. Aktif bir WhatsApp hesabı gerekir.</p>
+          </div>
+          <div class="box">
+            <h3>İnternet</h3>
+            <p>AI servisleri, model listesi ve WhatsApp bağlantısı için internet gerekir.</p>
+          </div>
+          <div class="box">
+            <h3>Önerilen ücretsiz AI</h3>
+            <p>
+              En kolay başlangıç için Google AI Studio üzerinden Gemini API key alın.
+              <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer">API key sayfasını aç</a>
+            </p>
+          </div>
+        </div>
+        <div class="warn" style="margin-top: 14px;">
+          Chrome veya Edge yüklü olması önerilir. Uygulama tarayıcı tabanlı oturum açar.
+        </div>
+        <div class="note" style="margin-top: 12px;">
+          Bilgi tabanındaki anlamsal arama ilk açılışta ek model indirebilir. İnternet yoksa sistem otomatik olarak hafif bir
+          anahtar-kelime aramasına düşer; çalışma durmaz.
+        </div>
+      </section>
+
+      <section>
+        <h2>3. Dosya yapısı</h2>
+        <ul>
+          <li><code>kurulum.bat</code>: Bağımlılıkları kurar ve projeyi derler.</li>
+          <li><code>Baslat.bat</code>: Uygulamayı açar ve paneli başlatır.</li>
+          <li><code>scripts/start-panel.ps1</code>: Teknik başlatma akışı.</li>
+          <li><code>src/</code>: Uygulamanın kaynak kodu.</li>
+          <li><code>tests/</code>: Otomatik testler.</li>
+          <li><code>.env.example</code>: Opsiyonel yerel ayar örneği. İsterseniz bunu <code>.env</code> olarak kopyalayabilirsiniz.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>4. Kurulum</h2>
+        <ol>
+          <li>Dosyaları bilgisayarınıza çıkarın.</li>
+          <li>Node.js yüklü değilse resmi sayfadan kurun.</li>
+          <li><code>kurulum.bat</code> dosyasına çift tıklayın.</li>
+          <li>Kurulum tamamlanınca <code>Baslat.bat</code> dosyasını çalıştırın.</li>
+        </ol>
+        <pre>Node.js resmi indirme: https://nodejs.org/en/download</pre>
+      </section>
+
+      <section>
+        <h2>5. İlk kullanım</h2>
+        <ol>
+          <li>Tarayıcı açılır ve yerel panel yüklenir.</li>
+          <li>WhatsApp hesabı ekleyin veya varsayılan hesabı başlatın.</li>
+          <li>QR kodu telefonunuzdan okutun.</li>
+          <li>AI sağlayıcınızı seçin.</li>
+          <li>Kendi API anahtarınızı girin ve model listesini alın.</li>
+          <li>Şirket bilgisi, fiyat, hizmet, kargo ve sık sorulan soruları ekleyin.</li>
+          <li>PDF, DOCX, TXT veya MD dosyalarını bilgi tabanına yükleyin.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>6. En kolay ücretsiz AI ayarı: Google Gemini</h2>
+        <p>
+          Başlangıç için en pratik seçenek Google AI Studio üzerinden Gemini API key almaktır. Ücretsiz kullanım kotaları ve erişilebilen
+          modeller zamanla değişebilir; yoğun veya ticari kullanımda Google tarafında ücretli plana geçmeniz gerekebilir.
+        </p>
+        <div class="note">
+          Panelde önerilen model: <strong>Gemini 2.5 Flash</strong>. Daha hafif ve hızlı kullanım için <strong>Gemini 2.5 Flash-Lite</strong>
+          veya listede görünen benzer Flash modelleri de seçilebilir.
+        </div>
+        <h3>Gemini API key alma adımları</h3>
+        <ol>
+          <li>Google hesabınıza giriş yapın.</li>
+          <li>
+            Google AI Studio API key sayfasını açın:
+            <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer">https://aistudio.google.com/app/apikey</a>
+          </li>
+          <li>İlk girişte şartları kabul edin.</li>
+          <li><strong>Create API key</strong> düğmesine tıklayın.</li>
+          <li>Yeni proje oluştur seçeneğini kullanın veya mevcut Google Cloud projenizi seçin.</li>
+          <li>Oluşan API key değerini kopyalayın ve güvenli yerde saklayın.</li>
+        </ol>
+        <h3>Resmi bağlantılar</h3>
+        <ul>
+          <li><a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noreferrer">Google AI Studio API key sayfası</a></li>
+          <li><a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noreferrer">Gemini API key resmi dokümanı</a></li>
+          <li><a href="https://ai.google.dev/gemini-api/docs/models" target="_blank" rel="noreferrer">Gemini model listesi</a></li>
+          <li><a href="https://ai.google.dev/gemini-api/docs/pricing" target="_blank" rel="noreferrer">Gemini ücretsiz/ücretli kullanım ve fiyatlandırma</a></li>
+        </ul>
+        <h3>Bu programda Gemini ayarı</h3>
+        <ol>
+          <li><code>Baslat.bat</code> ile paneli açın.</li>
+          <li><strong>AI Sağlayıcısı</strong> bölümünde <strong>Google Gemini</strong> seçin.</li>
+          <li>API anahtarı alanına Google AI Studio'dan aldığınız key değerini yapıştırın.</li>
+          <li><strong>Modelleri getir</strong> düğmesine tıklayın.</li>
+          <li>Model listesinden <strong>Gemini 2.5 Flash</strong>, <strong>Gemini 2.5 Flash-Lite</strong> veya listede görünen benzer Flash modelini seçin.</li>
+          <li><strong>AI ayarlarını kaydet</strong> düğmesine tıklayın.</li>
+        </ol>
+        <div class="warn">
+          API key değerini kimseyle paylaşmayın, ilan açıklamasına veya herkese açık dosyaya koymayın. Müşteri sadece kendi paneline girer.
+        </div>
+      </section>
+
+      <section>
+        <h2>7. Panelde doldurulacak alanlar</h2>
+        <ul>
+          <li>AI sağlayıcı seçimi</li>
+          <li>AI model seçimi</li>
+          <li>Kendi API anahtarınız</li>
+          <li>WhatsApp hesap adı</li>
+          <li>Şirket bilgileri ve belgeler</li>
+          <li>İsteğe bağlı <code>.env</code> ayarları: port ve veri klasörü</li>
+        </ul>
+        <p class="muted">Bu paket içinde hazır anahtar, şifre veya kullanıcı verisi yoktur. <code>.env.example</code> dosyasındaki satırlar yorumlu durumdadır; sadece ihtiyaç duyduğunuz satırı açın.</p>
+      </section>
+
+      <section>
+        <h2>8. Veriler nerede tutulur?</h2>
+        <p>
+          Konuşmalar, ayarlar ve bilgi tabanı yerel SQLite veritabanında saklanır. WhatsApp oturumu ve tarayıcı verileri de bilgisayarınızda
+          oluşan yerel klasörlerde tutulur.
+        </p>
+        <p class="muted">Varsayılan konumlar uygulama tarafından otomatik oluşturulur. İsterseniz sonradan ayarlardan değiştirebilirsiniz.</p>
+      </section>
+
+      <section>
+        <h2>9. Sorun olursa</h2>
+        <ul>
+          <li><strong>Node.js bulunamadı:</strong> Resmi siteden kurun ve tekrar <code>kurulum.bat</code> çalıştırın.</li>
+          <li><strong>Panel açılmıyor:</strong> Güvenlik duvarı veya başka bir uygulama aynı portu kullanıyor olabilir.</li>
+          <li><strong>QR gelmiyor:</strong> Hesabı yeniden başlatın ve internet bağlantısını kontrol edin.</li>
+          <li><strong>Model listesi gelmiyor:</strong> API anahtarını ve sağlayıcı hesabınızı kontrol edin.</li>
+          <li><strong>Gemini kota hatası:</strong> Ücretsiz kota dolmuş olabilir. Daha sonra tekrar deneyin, Flash-Lite seçin veya Google tarafında ücretli plana geçin.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>10. Kısa kullanım özeti</h2>
+        <ol>
+          <li>Node.js kur.</li>
+          <li><code>kurulum.bat</code> çalıştır.</li>
+          <li><code>Baslat.bat</code> çalıştır.</li>
+          <li>WhatsApp QR okut.</li>
+          <li>Google AI Studio'dan Gemini API key al.</li>
+          <li>Panelde Google Gemini seçip Gemini 2.5 Flash veya benzer Flash modelini kaydet.</li>
+          <li>Şirket bilgilerini ekle.</li>
+          <li>Kullanmaya başla.</li>
+        </ol>
+      </section>
+
+      <p class="footer">Bu kılavuz satış paketine özeldir ve müşteri tarafından doğrudan açılıp okunabilir.</p>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.runtime-test/
+tokens/
+.env
+*.log
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
