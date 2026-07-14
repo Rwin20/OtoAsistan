@@ -5,6 +5,7 @@ import express from "express";
 import fs from "node:fs";
 import { randomUUID } from "node:crypto";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { discoverProviderModels } from "./ai/modelDiscovery.js";
 import { buildProductionAIRegistry } from "./ai/productionProviders.js";
 import { ConversationService } from "./conversations/ConversationService.js";
@@ -369,12 +370,16 @@ app.post("/api/settings/ai-provider/models", async (request, response) => {
   }
 });
 
-const webDir = path.resolve("dist", "web");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const webDir = path.resolve(__dirname, "..", "web");
 if (fs.existsSync(webDir)) {
   app.use(express.static(webDir));
   app.get(/.*/, (_request, response) => {
     response.sendFile(path.join(webDir, "index.html"));
   });
+} else {
+  console.error("Web directory not found at:", webDir);
 }
 
 app.listen(config.port, config.host, () => {
