@@ -608,7 +608,7 @@ function App() {
   }, [activeAccountId, selectedChatId]);
 
   useEffect(() => {
-    const eventSource = new EventSource("/api/status/stream");
+    const eventSource = new window.EventSource("/api/status/stream");
 
     const handleStatus = (event: MessageEvent<string>) => {
       try {

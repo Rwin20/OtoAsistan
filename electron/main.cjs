@@ -21,11 +21,7 @@ function createWindow() {
     width: 1280,
     height: 800,
     title: 'OtoAsistan',
-    icon: path.join(__dirname, '..', 'build', 'icon.png'),
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
-    }
+    icon: path.join(__dirname, '..', 'build', 'icon.png')
   });
 
   mainWindow.setMenuBarVisibility(false);
