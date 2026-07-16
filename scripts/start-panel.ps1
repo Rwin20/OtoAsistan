@@ -49,7 +49,7 @@ if (-not (Test-Path "node_modules")) {
   Invoke-Step "Installing dependencies" { npm install }
 }
 
-Invoke-Step "Building application" { npm run build }
+Invoke-Step "Building application" { npm run build:react }
 
 $port = if ($env:PORT) { $env:PORT } else { "3000" }
 $env:PORT = $port
